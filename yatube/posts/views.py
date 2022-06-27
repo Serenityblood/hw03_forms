@@ -31,7 +31,6 @@ def group_posts(request, slug):
 
 
 def profile(request, username):
-    # Здесь код запроса к модели и создание словаря контекста
     author_username = get_object_or_404(User, username=username)
     author_posts = Post.objects.filter(author=author_username)
     paginator = Paginator(author_posts, 10)
@@ -60,8 +59,8 @@ def post_create(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
-            text = form.cleaned_data['text']
-            group = form.cleaned_data['group']
+            form.text = form.cleaned_data['text']
+            form.group = form.cleaned_data['group']
             post = form.save(False)
             post.author = request.user
             post.save()
