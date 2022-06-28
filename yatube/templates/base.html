@@ -14,12 +14,11 @@
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>       
-      {% include 'includes/header.html' %}
+    <header>{% include 'includes/header.html' %}</header>
     <main>
-      <h1>{% block header %}{% endblock %}</h1>
       {% block content %}
       {% endblock %}
     </main>
-      {% include 'includes/footer.html' %} 
+    <footer class="border-top text-center py-3">{% include 'includes/footer.html' %}</footer>
   </body>
 </html>

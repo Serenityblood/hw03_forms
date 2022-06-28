@@ -91,6 +91,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 TEXT_SIZE_NUMBER = 30
 
+PAGE_NUMBER = 10
+
 LOGIN_URL = 'users:login'
 
 LOGIN_REDIRECT_URL = 'posts:main_page'
