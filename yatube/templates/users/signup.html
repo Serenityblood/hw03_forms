@@ -7,12 +7,12 @@
         <div class="card-header">Зарегистрироваться</div>
           <div class="card-body">
           {% load user_filters %}
-              {% include 'users/includes/form_errors.html' %}
+              {% include 'includes/form_errors.html' %}
 
               <form method="post" action="{% url 'users:signup' %}">
               {% csrf_token %}
 
-              {% include 'users/includes/form_cycle.html'%}
+              {% include 'includes/form_cycle.html'%}
               
               <div class="col-md-6 offset-md-4">
                 <button type="submit" class="btn btn-primary">

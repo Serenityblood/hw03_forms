@@ -11,11 +11,11 @@
                 {% if form.instance.pk %} Редактирование поста{% else %}Новый пост{% endif %}         
               </div>
               <div class="card-body">
-                {% include 'users/includes/form_errors.html' %}     
+                {% include 'includes/form_errors.html' %}     
                 <form method="post" action="">
                   {% csrf_token %}
 
-                  {% include 'users/includes/form_cycle.html' %}
+                  {% include 'includes/form_cycle.html' %}
                   <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn-primary">
                       {% if form.instance.pk %}Добавить{% else %}Сохранить{% endif %}

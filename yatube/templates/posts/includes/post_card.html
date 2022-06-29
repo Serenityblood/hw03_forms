@@ -1,11 +1,11 @@
 <article>
     <ul>
       <li>
-        {% if request.resolver_match.url_name != 'profile' %}
+        {% if not author %}
           Автор: 
           <a href="{% url 'posts:profile' post.author.username %}">{{ post.author.get_full_name }}</a>
         {% else %}
-          Автор: {{ post.author.get_full_name }}
+          Автор: {{ author.get_full_name }}
         {% endif %}
       </li>
       <li>
@@ -16,7 +16,7 @@
       {{ post.text|linebreaks }}
     </p>
     <a href="{% url 'posts:post_detail' post.pk %}">подробная информация </a></br>
-    {% if request.resolver_match.url_name != 'group_posts_page' %}     
+    {% if not group %}     
       {% if post.group %}   
         <a href="{% url 'posts:group_posts_page' post.group.slug %}">#Группа {{ post.group.title }}</a>
       {% else %}
