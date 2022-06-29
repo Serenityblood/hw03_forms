@@ -9,6 +9,6 @@
     {% for post in page_obj %}
       {% include 'posts/includes/post_card.html' %}
     {% endfor %}
+  {% include 'posts/includes/paginator.html' %}
   </div>
-  {% include 'posts/includes/paginator.html' %}   
 {% endblock %}

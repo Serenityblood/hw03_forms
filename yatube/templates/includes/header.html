@@ -1,5 +1,4 @@
 {% load static %}
-<header>
   <nav class="navbar navbar-light" style="background-color: lightskyblue">
     <div class="container">
       <a class="navbar-brand" href="{% url 'posts:main_page' %}">
@@ -31,8 +30,8 @@
         <li class="nav-item"> 
           <a class="nav-link link-light" href="{% url 'users:logout' %}">Выйти</a>
         </li>
-        <li>
-          Пользователь: <a href="{% url 'posts:profile' request.user.username %}">{{ user.username }}</a>
+        <li class="nav-link link-light">
+          Пользователь: <a class="nav-link" href="{% url 'posts:profile' request.user.username %}">{{ user.username }}</a>
         </li>
         {% else %}
         <li class="nav-item"> 
@@ -46,5 +45,4 @@
       </ul>
       {# Конец добавленого в спринте #}
     </div>
-  </nav>      
-</header>
+  </nav>
